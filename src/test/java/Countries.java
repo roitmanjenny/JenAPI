@@ -29,6 +29,6 @@ public class Countries {
         JSONObject currencies = mainJsonObject.getJSONObject("currencies");
         String key = currencies.keySet().stream().findFirst().orElseThrow();
         String symbol = (String) currencies.getJSONObject(key).get("symbol");
-        System.out.println(region + " " + borders + " " + symbol);
+        System.out.println(region + " " + borders + " " + currencies + " " + symbol);
     }
 }
