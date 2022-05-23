@@ -27,8 +27,8 @@ public class Countries {
         String region = mainJsonObject.getString("region");
         JSONArray borders = mainJsonObject.getJSONArray("borders");
         JSONObject currencies = mainJsonObject.getJSONObject("currencies");
-        JSONObject ils = currencies.getJSONObject("ILS");
-        String symbol = ils.getString("symbol");
+        String key = currencies.keySet().stream().findFirst().orElseThrow();
+        String symbol = (String) currencies.getJSONObject(key).get("symbol");
         System.out.println(region + " " + borders + " " + symbol);
     }
 }
